@@ -1,0 +1,19 @@
+<!--players/partials/form; assumes presence of 'player'-->
+<%= form_for(player) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :target %><br>
+    <%= f.text_field :target %>
+  </div>
+  <div class="field">
+    <%= f.label :assassin %><br>
+    <%= f.text_field :assassin %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
