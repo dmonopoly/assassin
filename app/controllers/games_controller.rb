@@ -12,6 +12,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @players = @game.players
+    @new_player = Player.new
   end
 
   # GET /games/new

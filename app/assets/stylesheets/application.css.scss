@@ -10,8 +10,6 @@
  *
  *= require_self
  *= require_tree .
+ *= require vendor
+ *= require global
  */
-
-.big {
-	font-size: 25px;
-}

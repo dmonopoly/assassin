@@ -13,10 +13,16 @@
 
     <div id="players_area">
         <span class="big">Players</span>
-        <% @players.each do |player| %>
-          <%= render :partial => 'players/partials/form', :player => player %>
+        <% if @players %>
+          <% @players.each do |player| %>
+            <%= render :partial => 'players/partials/form', :locals => {:player => player} %>
+          <% end %>
+        <% else %>
+          No players.
         <% end %>
 
+        <span class="medium">New player</span>
+        <%= render :partial => 'players/partials/form', :locals => {:player => @new_player} %>
     </div>
 
     <%= link_to 'Edit', edit_game_path(@game) %> |

@@ -1,0 +1,30 @@
+/* =============================================== */
+/*  Variable Declaration                           */
+/* =============================================== */
+
+/* Colors */
+
+// Grays & Whites -
+$faint_white: #fcfcfc; // YouTube's like button color
+$cool_gray: #ededed; // barely visible on your mac
+$pleasant_gray: #ddd; // used for borders
+
+// Plain - 
+$blue: #4a9ec1;
+$pale_yellow: #fff3c5;
+$faint_blue: lighten($blue, 40%);
+$dark_blue: darken($blue, 40%);
+
+// Special -
+$background_color: white;
+$border_color: $pleasant_gray;
+$link_color: $blue;
+$text_color: darken($pleasant_gray, 45%);
+
+/* Fonts */
+$common_font: serif;
+
+/* Measurements */
+
+// General
+$central_width: 950px;

@@ -1,0 +1,131 @@
+/* =============================================== */
+/*  Global                                         */
+/* =============================================== */
+@import "partials/variables";
+
+/* General Setup */
+a {
+  color: $link_color;
+  text-decoration: none;
+  &:hover {
+    color: darken($link_color, 15%);
+  }
+}
+.faded {
+  color: lighten(gray, 10%);
+}
+/* Border Helpers */
+.my_border { // beware: borders can impact widths
+  border: 1px solid black;
+}
+.my_red_border {
+  border: 1px solid red;
+}
+.dotted_border {
+  border: 1px dotted black;
+}
+/* Common Helpers */
+a.hover { // so jquery can addClass directly for anchors to have proper link hover css (in zeroclipboard js)
+  color: darken($link_color, 15%);
+}
+.hidden {
+  display: none; // used in rambling mode when hiding header, among other places
+}
+a.no_line {
+  text-decoration: none;
+}
+.small {
+  font-size: 10px;
+}
+.big {
+  font-size: 20px;
+}
+.italic {
+  font-style: italic;
+}
+.underlined {
+  text-decoration: underline;
+}
+.bold {
+  font-weight: bold;
+}
+.not_bold {
+  font-weight: normal;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.moved_right_300 { // Handy when you want something in a form to be off to the right
+  position: absolute;
+  margin-left: 300px;
+}
+.moved_right_500 { // Handy when you want something in a form to be off to the right
+  position: absolute;
+  margin-left: 500px;
+}
+.pointer { cursor: pointer; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.padding_small { padding: 3px; }
+li.no_bullet { list-style-type: none; }
+ul.no_left_padding { padding-left: 0; }
+ul.vertical_list {
+  list-style-type: none;
+}
+ul.horizontal_list {
+  list-style-type: none;
+  li {
+    display: inline-block;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+.isolated_vertically { // used by home.mobile.erb
+  margin: 20px 0;
+}
+.isolated_horizontally {
+  margin: 0 20px;
+}
+.isolated {
+  margin: 20px;
+}
+
+/* Form Field Helpers */
+$form_field_width: 300px;
+.small_text_area {
+  width: $form_field_width;
+  height: 75px;
+}
+.longer_text_field {
+  width: $form_field_width + 10px;
+}
+.shorter_text_field {
+  width: 120px;
+}
+.rounded {
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+}
+
+// dynamic_form gem overriding stuff
+.field_with_errors { // basically hides the highlighting
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+.errorExplanation {
+  font-size: 16px;
+}
+
+/* More specific pieces */
+.fade_in { // class detected by jquery for fade-in
+  display: none;
+}
