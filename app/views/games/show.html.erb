@@ -12,16 +12,16 @@
     </p>
 
     <div id="players_area">
-        <span class="big">Players</span>
-        <% if @players %>
+        <h3>Players</h3>
+        <% if @players.empty? %>
+          No players.
+        <% else %>
           <% @players.each do |player| %>
             <%= render :partial => 'players/partials/form', :locals => {:player => player} %>
           <% end %>
-        <% else %>
-          No players.
         <% end %>
 
-        <span class="medium">New player</span>
+        <h4>New player</h4>
         <%= render :partial => 'players/partials/form', :locals => {:player => @new_player} %>
     </div>
 

@@ -1,29 +1,29 @@
 <h1>Listing games</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="game_index" class="row">
+  <div class="span3">
+    <h3>Name</h3>
     <% @games.each do |game| %>
-      <tr>
-        <td><%= game.name %></td>
-        <td><%= game.description %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= game.name %><br>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="span3">
+    <h3>Description</h3>
+
+    <% @games.each do |game| %>
+      <%= game.description %>
+    <% end %>
+  </div>
+  <div class="span5">
+    <h3>Controls</h3>
+    <% @games.each do |game| %>
+      <%= link_to 'Show', game %>
+      <%= link_to 'Edit', edit_game_path(game) %>
+      <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+  <br>
+</div>
 
 <br>
-
+<br>
 <%= link_to 'New Game', new_game_path %>
