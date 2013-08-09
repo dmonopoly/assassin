@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'jquery-tokeninput-rails'
+gem 'd3_rails'
 
 # Makes following links faster
 gem 'turbolinks'

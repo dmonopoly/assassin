@@ -13,5 +13,6 @@
 //= require jquery
 //= require turbolinks
 //= require bootstrap
+//= require d3
 //= require_tree .
 //= require vendor
