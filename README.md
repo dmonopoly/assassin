@@ -3,4 +3,7 @@ target others.
 
 Status: In development.
 
+now: check player form
+
+other:
 -use jquery token input?

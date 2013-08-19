@@ -1,19 +1,22 @@
 <!--players/partials/form; assumes presence of 'player'-->
+<div class="my_border">
 <%= form_for(player) do |f| %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :target %><br>
-    <%= f.text_field :target %>
+    <label>Target</label><br>
+    <%= collection_select player, :target_id, get_competitors_of(player.id,
+        player.game), :id, :name, {:selected => player.target_id} %>
   </div>
   <div class="field">
-    <%= f.label :assassin %><br>
-    <%= f.text_field :assassin %>
+    <label>Assassin</label><br>
+      <%= collection_select player, :assassin_id, get_competitors_of(player.id,
+          player.game), :id, :name, {:selected => player.assassin_id} %>
   </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

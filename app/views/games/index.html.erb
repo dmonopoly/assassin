@@ -1,24 +1,18 @@
+<% content_for :head do %>
+  <div class="page-header">
+    <h1>Assassin <small>Track your enemy</small></h1>
+  </div>
+<% end %>
 <div id="game_index" class="row">
-  <h1>Listing games</h1>
   <div class="span3">
-    <h3>Name</h3>
+    <h3>Existing Games</h3>
     <% @games.each do |game| %>
-      <%= game.name %><br>
+      <%= link_to game.name, game %><br>
     <% end %>
   </div>
   <div class="span3">
-    <h3>Description</h3>
-
     <% @games.each do |game| %>
       <%= game.description %>
-    <% end %>
-  </div>
-  <div class="span5">
-    <h3>Controls</h3>
-    <% @games.each do |game| %>
-      <%= link_to 'Show', game %>
-      <%= link_to 'Edit', edit_game_path(game) %>
-      <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
   <br>

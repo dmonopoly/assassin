@@ -115,16 +115,6 @@ $form_field_width: 300px;
   border-radius:6px;
 }
 
-// dynamic_form gem overriding stuff
-.field_with_errors { // basically hides the highlighting
-  margin: 0;
-  padding: 0;
-  display: inline;
-}
-.errorExplanation {
-  font-size: 16px;
-}
-
 /* More specific pieces */
 .fade_in { // class detected by jquery for fade-in
   display: none;
