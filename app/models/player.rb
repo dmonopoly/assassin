@@ -1,10 +1,14 @@
 class Player < ActiveRecord::Base
-  belongs_to :game
-  has_one :target, :class_name => 'Player', :foreign_key => 'target_id'
-  has_one :assassin, :class_name => 'Player', :foreign_key => 'assassin_id'
+  belongs_to :game, inverse_of: :players
 
-  accepts_nested_attributes_for :target, update_only: true
-  accepts_nested_attributes_for :assassin, update_only: true
+  has_many :objectives, dependent: :destroy
+  has_many :rivals, through: :objectives, class_name: 'Player'
 
-  validates_presence_of :name
+  validates_presence_of :name, :game_id
+
+  def competitors
+    self.game.players.select { |p|
+      p.alive && p.id != self.id
+    }
+  end
 end

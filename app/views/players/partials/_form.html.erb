@@ -2,18 +2,22 @@
 <div class="my_border">
 <%= form_for(player) do |f| %>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <label>Target</label><br>
-    <%= collection_select player, :target_id, get_competitors_of(player.id,
-        player.game), :id, :name, {:selected => player.target_id} %>
-  </div>
-  <div class="field">
-    <label>Assassin</label><br>
-      <%= collection_select player, :assassin_id, get_competitors_of(player.id,
-          player.game), :id, :name, {:selected => player.assassin_id} %>
+    <div class="inline-block">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="inline-block">
+      <%= f.label :rivals, 'Target' %>
+      <ul class="no_left_padding">
+        <% player.competitors.each do |competitor| %>
+          <li class="no_bullet">
+            <%= check_box_tag "player[rival_ids][]", competitor.id, player.rivals.include?(competitor) %>
+            <%= competitor.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>

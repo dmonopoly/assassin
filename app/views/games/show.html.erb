@@ -1,15 +1,12 @@
 <div id="game_show">
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @game.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @game.description %>
-  </p>
+  <div class="page-header">
+    <h2>
+      <%= @game.name %><br>
+      <small><%= @game.description %></small>
+    </h2>
+  </div>
 
   <div id="players_area">
     <h3>Players</h3>

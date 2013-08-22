@@ -13,7 +13,13 @@ g1_players = Player.create!([
   { name: 'Kingston', game: games.first },
   { name: 'Jason', game: games.first }
 ])
+# Dave -> Jason -> Kingston -> Sarah -> Dave
 g1_players.each_with_index { |p, i|
-  p.assassin = g1_players[i-1]
-  p.target = g1_players[i-2]
+  Objective.create!([
+    {
+      player_id: p.id,
+      rival_id: g1_players[i-1].id,
+      is_target: true
+    }
+  ])
 }
