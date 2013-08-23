@@ -12,7 +12,8 @@
       <ul class="no_left_padding">
         <% player.competitors.each do |competitor| %>
           <li class="no_bullet">
-            <%= check_box_tag "player[rival_ids][]", competitor.id, player.rivals.include?(competitor) %>
+            <%= check_box_tag "player[rival_ids][]", competitor.id,
+                player.rivals.include?(competitor) %>
             <%= competitor.name %>
           </li>
         <% end %>

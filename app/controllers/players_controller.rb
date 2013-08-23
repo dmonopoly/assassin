@@ -10,10 +10,8 @@ class PlayersController < ApplicationController
       game_tmp = @player.game
       if @player.save
         format.html { redirect_to @player.game, notice: 'Player was successfully created.' }
-        format.json { render 'games/show', status: :created, location: @player.game }
       else
         format.html { redirect_to game_tmp, alert: 'Invalid player form.' }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -31,10 +29,8 @@ class PlayersController < ApplicationController
       game_tmp = @player.game
       if @player.update(player_params)
         format.html { redirect_to @player.game, notice: 'Player was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { redirect_to game_tmp, alert: 'Invalid player form.' }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +42,6 @@ class PlayersController < ApplicationController
     @player.destroy
     respond_to do |format|
       format.html { redirect_to game }
-      format.json { head :no_content }
     end
   end
 

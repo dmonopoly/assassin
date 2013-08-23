@@ -8,6 +8,14 @@
 </head>
 <body>
   <div id="header" class="container">
+    <div class="page-header">
+      <h1>
+        <%= link_to "Assassin", '/' %>
+        <small>
+          <%= link_to "Track your enemy", '/', style: 'color: gray' %>
+        </small>
+      </h1>
+    </div>
     <%= yield :head %>
   </div>
   <div id="main" class="container">

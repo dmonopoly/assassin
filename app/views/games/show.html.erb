@@ -1,8 +1,6 @@
 <div id="game_show">
-  <p id="notice"><%= notice %></p>
-  <div class="alert">
-    <%= alert %>
-  </div>
+  <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
+  <% if alert %><p class="alert alert-error"><%= alert %></p><% end %>
 
   <div class="page-header">
     <h2>
