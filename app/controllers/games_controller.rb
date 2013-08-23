@@ -1,31 +1,23 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
-  # GET /games
-  # GET /games.json
   def index
     @games = Game.all
   end
 
-  # GET /games/1
-  # GET /games/1.json
   def show
     @game = Game.find(params[:id])
     @players = @game.players
     @new_player = Player.new(game: @game)
   end
 
-  # GET /games/new
   def new
     @game = Game.new
   end
 
-  # GET /games/1/edit
   def edit
   end
 
-  # POST /games
-  # POST /games.json
   def create
     @game = Game.new(game_params)
 
@@ -38,8 +30,6 @@ class GamesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /games/1
-  # PATCH/PUT /games/1.json
   def update
     respond_to do |format|
       if @game.update(game_params)
@@ -51,8 +41,6 @@ class GamesController < ApplicationController
     end
   end
 
-  # DELETE /games/1
-  # DELETE /games/1.json
   def destroy
     @game.destroy
     respond_to do |format|

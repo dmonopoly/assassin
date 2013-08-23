@@ -1,8 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:update, :destroy]
 
-  # POST /players
-  # POST /players.json
   def create
     @player = Player.new(player_params)
 
@@ -16,8 +14,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /players/1
-  # PATCH/PUT /players/1.json
   def update
     # If no checkboxes are selected, set this to be an empty array. If we don't
     # do this, then unchecking all selections and updating would result in the
@@ -35,8 +31,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # DELETE /players/1
-  # DELETE /players/1.json
   def destroy
     game = @player.game
     @player.destroy

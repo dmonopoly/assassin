@@ -3,7 +3,7 @@ target others.
 
 Status: In development.
 
-now: check player form
+now: d3 integrate
 
 other:
 -use jquery token input?
