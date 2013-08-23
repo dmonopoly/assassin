@@ -1,13 +1,23 @@
 <div id="game_show">
-  <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
-  <% if alert %><p class="alert alert-error"><%= alert %></p><% end %>
-
   <div class="page-header">
     <h2>
       <%= @game.name %><br>
       <small><%= @game.description %></small>
     </h2>
   </div>
+
+  <% if notice %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= notice %>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= alert %>
+    </div>
+  <% end %>
 
   <div id="players_area">
     <h3>Players</h3>

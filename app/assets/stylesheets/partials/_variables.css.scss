@@ -9,11 +9,13 @@ $faint_white: #fcfcfc; // YouTube's like button color
 $cool_gray: #ededed; // barely visible on your mac
 $pleasant_gray: #ddd; // used for borders
 
-// Plain - 
+// Plain -
 $blue: #4a9ec1;
 $pale_yellow: #fff3c5;
 $faint_blue: lighten($blue, 40%);
 $dark_blue: darken($blue, 40%);
+$pale_red: #f2dede;  // bootstrap red alert-error background
+// $red: #B94A48;  // bootstrap red alert-error text (darker)
 
 // Special -
 $background_color: white;
