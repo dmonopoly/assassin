@@ -3,16 +3,16 @@ class PlayersController < ApplicationController
 
   # POST /players
   # POST /players.json
-  # TODO: fix
   def create
     @player = Player.new(player_params)
 
     respond_to do |format|
+      game_tmp = @player.game
       if @player.save
         format.html { redirect_to @player.game, notice: 'Player was successfully created.' }
         format.json { render 'games/show', status: :created, location: @player.game }
       else
-        format.html { render 'games/show' }
+        format.html { redirect_to game_tmp, alert: 'Invalid player form.' }
         format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
@@ -28,11 +28,12 @@ class PlayersController < ApplicationController
     params[:player][:rival_ids] ||= []
 
     respond_to do |format|
+      game_tmp = @player.game
       if @player.update(player_params)
         format.html { redirect_to @player.game, notice: 'Player was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render 'games/show' }
+        format.html { redirect_to game_tmp, alert: 'Invalid player form.' }
         format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
@@ -57,6 +58,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :rival_ids => [])
+      params.require(:player).permit(:name, :game_id, :rival_ids => [])
     end
 end
